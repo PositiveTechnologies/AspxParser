@@ -1,0 +1,31 @@
+﻿using System.Text;
+using System.Text.RegularExpressions;
+
+namespace AspxParser
+{
+    internal partial class Parser
+    {
+        private readonly IParserEventListener eventListener;
+        private readonly IAspxSource source;
+        private readonly string text;
+        private readonly StringBuilder currentLiteral = new StringBuilder();
+        private int currentLiteralStart = -1;
+        private int currentScriptTagStart = -1;
+        private bool inScriptTag;
+        private bool ignoreNextSpaceString;
+
+        public Parser(IParserEventListener eventListener, bool isFw40, IAspxSource source)
+        {
+            this.eventListener = eventListener;
+            this.source = source;
+            this.text = source.Text;
+            this.tagRegex = isFw40 ? tagRegex40 : tagRegex35;
+        }
+
+        private Location CreateLocation(Match match) =>
+            CreateLocation(match.Index, match.Index + match.Length);
+
+        private Location CreateLocation(int startPos, int endPos) =>
+            new Location(source, startPos, endPos);
+    }
+}
