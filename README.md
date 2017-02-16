@@ -1,5 +1,3 @@
-Aspx files (aspx, cshtml, etc.) parser based on regex.
-
 ## Usage
 
 ### Source Code Parsing
