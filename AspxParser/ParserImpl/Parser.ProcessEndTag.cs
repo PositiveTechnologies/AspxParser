@@ -11,8 +11,6 @@ namespace AspxParser
             {
                 if ("script".EqualsNoCase(name))
                 {
-                    ProcessLiteral(match.Index);
-
                     currentScriptTagStart = -1;
                     inScriptTag = false;
                 }
@@ -21,6 +19,8 @@ namespace AspxParser
                     return false;
                 }
             }
+
+            ProcessLiteral(match.Index);
 
             var location = CreateLocation(match);
             eventListener.OnTag(location, TagType.Close, string.Intern(name), TagAttributes.Empty);
