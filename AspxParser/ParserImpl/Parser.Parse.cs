@@ -62,7 +62,10 @@ namespace AspxParser
                 }
                 else if (!inScriptTag && pos < lastTagEnd && IsMatch(tagRegex, pos, out match))
                 {
-                    ProcessBeginTag(match);
+                    if (!ProcessBeginTag(match))
+                    {
+                        skipParsedTag = true;
+                    }
                 }
                 else if (IsMatch(endtagRegex, pos, out match))
                 {
