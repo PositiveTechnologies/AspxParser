@@ -13,7 +13,7 @@ namespace System.Web.RegularExpressions
             pattern = "\\G<%--(([^-]*)-)*?-%>";
             roptions = RegexOptions.Multiline | RegexOptions.Singleline;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            //factory = new CommentRegexFactory7();
+            factory = new CommentRegexFactory7();
             capsize = 3;
             InitializeReferences();
         }

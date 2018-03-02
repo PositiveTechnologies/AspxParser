@@ -15,7 +15,7 @@ namespace System.Web.RegularExpressions
             pattern = "<%(?![#$])(([^%]*)%)*?>";
             roptions = RegexOptions.Multiline | RegexOptions.Singleline;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            //factory = new ServerTagsRegexFactory12();
+            factory = new ServerTagsRegexFactory12();
             capsize = 3;
             InitializeReferences();
         }

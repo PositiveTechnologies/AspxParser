@@ -16,7 +16,7 @@ namespace System.Web.RegularExpressions
             pattern = "\\G<%\\s*@(\\s*(?<attrname>\\w[\\w:]*(?=\\W))(\\s*(?<equal>=)\\s*\"(?<attrval>[^\"]*)\"|\\s*(?<equal>=)\\s*'(?<attrval>[^']*)'|\\s*(?<equal>=)\\s*(?<attrval>[^\\s\"'%>]*)|(?<equal>)(?<attrval>\\s*?)))*\\s*?%>";
             roptions = RegexOptions.Multiline | RegexOptions.Singleline;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            ////factory = new DirectiveRegexFactory2();
+            factory = new DirectiveRegexFactory2();
             capnames = new Hashtable();
             capnames.Add("1", 1);
             capnames.Add("attrval", 5);

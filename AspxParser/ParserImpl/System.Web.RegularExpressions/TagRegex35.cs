@@ -14,7 +14,7 @@ namespace System.Web.RegularExpressions
             pattern = "\\G<(?<tagname>[\\w:\\.]+)(\\s+(?<attrname>\\w[-\\w:]*)(\\s*=\\s*\"(?<attrval>[^\"]*)\"|\\s*=\\s*'(?<attrval>[^']*)'|\\s*=\\s*(?<attrval><%#.*?%>)|\\s*=\\s*(?<attrval>[^\\s=/>]*)|(?<attrval>\\s*?)))*\\s*(?<empty>/)?>";
             roptions = RegexOptions.Multiline | RegexOptions.Singleline;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            ////factory = new TagRegex35Factory25();
+            factory = new TagRegex35Factory25();
             capnames = new Hashtable();
             capnames.Add("empty", 6);
             capnames.Add("attrval", 5);

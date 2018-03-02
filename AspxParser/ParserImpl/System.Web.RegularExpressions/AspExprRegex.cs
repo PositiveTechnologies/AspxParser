@@ -12,7 +12,7 @@ namespace System.Web.RegularExpressions
             pattern = "\\G<%\\s*?=(?<code>.*?)?%>";
             roptions = RegexOptions.Multiline | RegexOptions.Singleline;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            //factory = new AspExprRegexFactory5();
+            factory = new AspExprRegexFactory5();
             capnames = new Hashtable();
             capnames.Add("0", 0);
             capnames.Add("code", 1);

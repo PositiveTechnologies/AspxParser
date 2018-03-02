@@ -13,7 +13,7 @@ namespace System.Web.RegularExpressions
             pattern = "[^%]>";
             roptions = RegexOptions.Multiline | RegexOptions.Singleline;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            //factory = new GTRegexFactory10();
+            factory = new GTRegexFactory10();
             capsize = 1;
             InitializeReferences();
         }

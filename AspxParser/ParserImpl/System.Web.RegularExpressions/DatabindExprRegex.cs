@@ -16,7 +16,7 @@ namespace System.Web.RegularExpressions
             pattern = "\\G<%#(?<encode>:)?(?<code>.*?)?%>";
             roptions = RegexOptions.Multiline | RegexOptions.Singleline;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            //factory = new DatabindExprRegexFactory6();
+            factory = new DatabindExprRegexFactory6();
             capnames = new Hashtable();
             capnames.Add("0", 0);
             capnames.Add("code", 2);

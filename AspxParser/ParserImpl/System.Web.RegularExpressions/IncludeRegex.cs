@@ -14,7 +14,7 @@ namespace System.Web.RegularExpressions
             pattern = "\\G<!--\\s*#(?i:include)\\s*(?<pathtype>[\\w]+)\\s*=\\s*[\"']?(?<filename>[^\\\"']*?)[\"']?\\s*-->";
             roptions = RegexOptions.Multiline | RegexOptions.Singleline;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            //factory = new IncludeRegexFactory8();
+            factory = new IncludeRegexFactory8();
             capnames = new Hashtable();
             capnames.Add("pathtype", 1);
             capnames.Add("0", 0);

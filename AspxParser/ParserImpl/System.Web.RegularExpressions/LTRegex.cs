@@ -15,7 +15,7 @@ namespace System.Web.RegularExpressions
             pattern = "<[^%]";
             roptions = RegexOptions.Multiline | RegexOptions.Singleline;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            //factory = new LTRegexFactory11();
+            factory = new LTRegexFactory11();
             capsize = 1;
             InitializeReferences();
         }

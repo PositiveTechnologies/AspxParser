@@ -15,7 +15,7 @@ namespace System.Web.RegularExpressions
             pattern = "runat\\W*server";
             roptions = RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.CultureInvariant;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            //factory = new RunatServerRegexFactory13();
+            factory = new RunatServerRegexFactory13();
             capsize = 1;
             InitializeReferences();
         }

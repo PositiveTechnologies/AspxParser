@@ -14,7 +14,7 @@ namespace System.Web.RegularExpressions
             pattern = "\\G<%(?!@)(?<code>.*?)%>";
             roptions = RegexOptions.Multiline | RegexOptions.Singleline;
             internalMatchTimeout = TimeSpan.FromTicks(-10000L);
-            //factory = new AspCodeRegexFactory4();
+            factory = new AspCodeRegexFactory4();
             capnames = new Hashtable();
             capnames.Add("0", 0);
             capnames.Add("code", 1);
