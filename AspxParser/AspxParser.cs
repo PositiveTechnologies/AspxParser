@@ -112,8 +112,9 @@ namespace AspxParser
                 }
                 else
                 {
-                    newSource = File.Exists(resolvedPath)
-                        ? new AspxSource(resolvedPath, File.ReadAllText(resolvedPath))
+                    string normResolvedPath = resolvedPath.NormalizeFilePath();
+                    newSource = File.Exists(normResolvedPath)
+                        ? new AspxSource(resolvedPath, File.ReadAllText(normResolvedPath))
                         : null;
                 }
 
