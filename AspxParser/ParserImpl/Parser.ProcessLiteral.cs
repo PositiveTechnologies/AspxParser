@@ -2,14 +2,14 @@
 {
     partial class Parser
     {
-        private void AppendLiteral(int pos, string text)
+        private void AppendLiteral(int pos, string t)
         {
             if (currentLiteralStart < 0)
             {
                 currentLiteralStart = pos;
             }
 
-            currentLiteral.Append(text);
+            currentLiteral.Append(t);
         }
 
         private void AppendLiteral(int pos, char c)

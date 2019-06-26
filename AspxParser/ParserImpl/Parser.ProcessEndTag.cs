@@ -11,7 +11,6 @@ namespace AspxParser
             {
                 if ("script".EqualsNoCase(name))
                 {
-                    currentScriptTagStart = -1;
                     inScriptTag = false;
                 }
                 else

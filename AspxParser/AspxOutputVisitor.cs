@@ -26,24 +26,9 @@ namespace AspxParser
             return base.Visit(node);
         }
 
-        public override object Visit(AspxNode.CodeRender node)
-        {
-            return base.Visit(node);
-        }
-
-        public override object Visit(AspxNode.CodeRenderEncode node)
-        {
-            return base.Visit(node);
-        }
-
         public override object Visit(AspxNode.CodeRenderExpression node)
         {
             writer.Write("<%=" + node.Expression + "%>");
-            return base.Visit(node);
-        }
-
-        public override object Visit(AspxNode.DataBinding node)
-        {
             return base.Visit(node);
         }
 

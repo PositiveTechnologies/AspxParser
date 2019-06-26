@@ -5,8 +5,8 @@ namespace AspxParser
 {
     public static class PathUtils
     {
-        private static bool? isRunningOnLinux = null;
-        private static bool? isCoreApp = null;
+        private static bool? isRunningOnLinux;
+        private static bool? isCoreApp;
 
         public const int MaxDirLength = 248 - 1;
         public const int MaxPathLength = 260 - 1;

@@ -23,8 +23,8 @@ namespace AspxParser
                 throw new ArgumentOutOfRangeException(nameof(end));
             }
 
-            this.Start = start;
-            this.Length = end - start;
+            Start = start;
+            Length = end - start;
             this.source = source;
         }
 
@@ -38,7 +38,7 @@ namespace AspxParser
 
         public int Length { get; }
 
-        public bool IsEmpty => this.Length == 0;
+        public bool IsEmpty => Length == 0;
 
         public string GetText() =>
             Source.Text.Substring(Start, Length);

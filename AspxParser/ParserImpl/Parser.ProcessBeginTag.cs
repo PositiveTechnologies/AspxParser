@@ -6,8 +6,7 @@ namespace AspxParser
     {
         private bool ProcessBeginTag(Match match)
         {
-            string ignored;
-            var attributes = ProcessAttributes(match, false, out ignored);
+            var attributes = ProcessAttributes(match, false, out _);
             if (!attributes.IsRunAtServer)
             {
                 foreach (var pair in attributes)
@@ -29,7 +28,6 @@ namespace AspxParser
                 if (!isEmpty)
                 {
                     inScriptTag = true;
-                    currentScriptTagStart = match.Index + match.Length;
                 }
             }
 

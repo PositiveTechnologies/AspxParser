@@ -10,7 +10,6 @@ namespace AspxParser
         private readonly string text;
         private readonly StringBuilder currentLiteral = new StringBuilder();
         private int currentLiteralStart = -1;
-        private int currentScriptTagStart = -1;
         private bool inScriptTag;
         private bool ignoreNextSpaceString;
 
@@ -18,8 +17,8 @@ namespace AspxParser
         {
             this.eventListener = eventListener;
             this.source = source;
-            this.text = source.Text;
-            this.tagRegex = isFw40 ? tagRegex40 : tagRegex35;
+            text = source.Text;
+            tagRegex = isFw40 ? tagRegex40 : tagRegex35;
         }
 
         private Location CreateLocation(Match match) =>

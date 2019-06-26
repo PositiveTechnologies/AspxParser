@@ -51,21 +51,5 @@ namespace AspxParser
         private static readonly Regex textRegex = new Regex(
             "\\G[^<]+",
             Compiled | Multiline | Singleline, TimeSpan.FromTicks(-10000L));
-
-        private static readonly Regex gtRegex = new Regex(
-            "[^%]>",
-            Compiled | Multiline | Singleline, TimeSpan.FromTicks(-10000L));
-
-        private static readonly Regex ltRegex = new Regex(
-            "<[^%]",
-            Compiled | Multiline | Singleline, TimeSpan.FromTicks(-10000L));
-
-        private static readonly Regex serverTagsRegex = new Regex(
-            "<%(?![#$])(([^%]*)%)*?>",
-            Compiled | Multiline | Singleline, TimeSpan.FromTicks(-10000L));
-
-        private static readonly Regex runatServerRegex = new Regex(
-            "runat\\W*server",
-            Compiled | IgnoreCase | Multiline | Singleline | CultureInvariant, TimeSpan.FromTicks(-10000L));
     }
 }

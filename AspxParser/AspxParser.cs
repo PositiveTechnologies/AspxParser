@@ -13,7 +13,7 @@ namespace AspxParser
         private readonly string rootDirectory;
         private readonly bool isFw40;
         private AspxNode currentNode;
-        
+
         /// <param name="rootDirectory">A directory to a parsed document</param>
         /// <param name="isFw40">If true use .NET 4 regex, otherwise use .NET 3.5 regex</param>
         public AspxParser(string rootDirectory, bool isFw40 = true)
@@ -129,7 +129,7 @@ namespace AspxParser
             }
             catch (Exception ex) when (!(ex is ThreadAbortException))
             {
-                AddError(location, $"Exception occured while parsing included file `{resolvedPath}`: {ex.ToString()}");
+                AddError(location, $"Exception occured while parsing included file `{resolvedPath}`: {ex}");
             }
         }
 
