@@ -7,7 +7,8 @@
         T Visit(AspxNode.SelfClosingHtmlTag node);
         T Visit(AspxNode.OpenAspxTag node);
         T Visit(AspxNode.SelfClosingAspxTag node);
-        T Visit(AspxNode.CloseTag node);
+        T Visit(AspxNode.CloseAspxTag node);
+        T Visit(AspxNode.CloseHtmlTag node);
         T Visit(AspxNode.AspxDirective node);
         T Visit(AspxNode.DataBinding node);
         T Visit(AspxNode.CodeRender node);

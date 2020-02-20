@@ -27,7 +27,12 @@
             return VisitChildren(node);
         }
 
-        public virtual T Visit(AspxNode.CloseTag node)
+        public virtual T Visit(AspxNode.CloseHtmlTag node)
+        {
+            return VisitChildren(node);
+        }
+
+        public virtual T Visit(AspxNode.CloseAspxTag node)
         {
             return VisitChildren(node);
         }

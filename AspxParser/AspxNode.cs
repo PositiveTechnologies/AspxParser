@@ -133,11 +133,38 @@ namespace AspxParser
             }
         }
 
-        public sealed class CloseTag : Located
+        public abstract class CloseTag : Located
+        {
+            protected CloseTag(Location location)
+                : base(location)
+            {
+            }
+        }
+
+        public sealed class CloseAspxTag : CloseTag
+        {
+            public string ControlName { get; }
+
+            public string Prefix { get; }
+
+            public CloseAspxTag(string prefix, string name, Location location)
+                : base(location)
+            {
+                ControlName = name;
+                Prefix = prefix;
+            }
+
+            public override T Accept<T>(IAspxVisitor<T> visitor)
+            {
+                return visitor.Visit(this);
+            }
+        }
+
+        public sealed class CloseHtmlTag : CloseTag
         {
             public string Name { get; }
 
-            public CloseTag(string name, Location location)
+            public CloseHtmlTag(string name, Location location)
                 : base(location)
             {
                 Name = name;

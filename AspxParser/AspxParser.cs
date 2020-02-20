@@ -178,6 +178,7 @@ namespace AspxParser
                                 break;
                             }
                         }
+                        currentNode.AddChild(new AspxNode.CloseAspxTag(prefix, controlName, location));
                     }
                     else
                     {
@@ -191,8 +192,8 @@ namespace AspxParser
                                 break;
                             }
                         }
+                        currentNode.AddChild(new AspxNode.CloseHtmlTag(name, location));
                     }
-                    currentNode.AddChild(new AspxNode.CloseTag(name, location));
                     break;
                 }
 
