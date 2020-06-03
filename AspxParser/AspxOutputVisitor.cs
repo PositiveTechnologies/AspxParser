@@ -20,9 +20,15 @@ namespace AspxParser
             return base.Visit(node);
         }
 
-        public override object Visit(AspxNode.CloseTag node)
+        public override object Visit(AspxNode.CloseHtmlTag node)
         {
             writer.Write("</" + node.Name + ">");
+            return base.Visit(node);
+        }
+
+        public override object Visit(AspxNode.CloseAspxTag node)
+        {
+            writer.Write("</" + node.Prefix + ":" + node.ControlName + ">");
             return base.Visit(node);
         }
 

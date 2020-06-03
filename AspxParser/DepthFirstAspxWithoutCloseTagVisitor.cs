@@ -37,7 +37,12 @@
             return VisitChildren(node);
         }
 
-        public T Visit(AspxNode.CloseTag node)
+        public T Visit(AspxNode.CloseHtmlTag node)
+        {
+            return default(T);
+        }
+
+        public T Visit(AspxNode.CloseAspxTag node)
         {
             return default(T);
         }
