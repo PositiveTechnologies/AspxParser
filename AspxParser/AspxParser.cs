@@ -172,7 +172,7 @@ namespace AspxParser
                         for (var node = currentNode; !(node is AspxNode.Root); node = node.Parent)
                         {
                             var casted = node as AspxNode.OpenAspxTag;
-                            if (casted != null && casted.Prefix == prefix && casted.ControlName == controlName)
+                            if (casted != null && casted.Prefix.EqualsNoCase(prefix) && casted.ControlName.EqualsNoCase(controlName))
                             {
                                 currentNode = casted.Parent;
                                 break;
@@ -186,7 +186,7 @@ namespace AspxParser
                         for (var node = currentNode; !(node is AspxNode.OpenAspxTag || node is AspxNode.Root); node = node.Parent)
                         {
                             var casted = node as AspxNode.OpenHtmlTag;
-                            if (casted != null && casted.Name == name)
+                            if (casted != null && casted.Name.EqualsNoCase(name))
                             {
                                 currentNode = casted.Parent;
                                 break;
